@@ -1,8 +1,19 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import Head from "next/head";
+import type { AppProps } from "next/app";
+import Layout from "../components/Layout/Layout";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <Layout>
+      <Head>
+        <title>Joanna's Blog</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Blog page of Joanna Dias" />
+      </Head>
+      <Component {...pageProps} />
+    </Layout>
+  );
+};
 
-export default MyApp
+export default MyApp;
